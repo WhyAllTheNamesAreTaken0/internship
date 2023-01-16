@@ -19,15 +19,7 @@ def delete_neg_in_price_and_sales(data):
 def delete_duplicates(data):
         
     return data.drop_duplicates()
-    
-def remove_outliers(data, col): ##
 
-    Q1 = data[col].quantile(0.10)
-    Q3 = data[col].quantile(0.90)
-    IQR = Q3 - Q1
-    data = data[~((data[col] < (Q1 - 1.5 * IQR)) | (data[col] > (Q3 + 1.5 * IQR)))]
-        
-    return data
     
 def date_format(data, col):
         
